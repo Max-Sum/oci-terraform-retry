@@ -1,10 +1,13 @@
 FROM gzmaxsum/oci-terraform
 
 USER root
-RUN apt-get update && apt-get install -y curl \
-&& rm -rf /var/lib/apt/lists/*
 
 ADD app.sh /
+
+RUN apt-get update && apt-get install -y curl \
+ && rm -rf /var/lib/apt/lists/* \
+ && chmod +x /app.sh
+
 USER nonroot
 
 ENV INTERVAL=1
