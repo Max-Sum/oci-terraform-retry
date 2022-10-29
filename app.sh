@@ -22,8 +22,8 @@ echo "Done."
 
 if [ "x$TELEGRAM_BOT_TOKEN" != "x" ]; then
   curl --location --request POST \
-    'https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage' \
-    --form 'text=${TELEGRAM_MESSAGE}' \
-    --form 'chat_id=${TELEGRAM_CHAT_ID}' \
-    --form 'parse_mode=markdown'
+    "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
+    --form "text=${TELEGRAM_MESSAGE}" \
+    --form "chat_id=${TELEGRAM_CHAT_ID}" \
+    --form "parse_mode=markdown"
 fi
